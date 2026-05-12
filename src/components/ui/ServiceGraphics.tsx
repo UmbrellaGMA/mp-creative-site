@@ -9,7 +9,7 @@ export function ServiceGraphic({ type }: { type: string }) {
     case "Branding": return <BrandingGraphic />;
     case "Desenvolvimento Web": return <WebDevGraphic />;
     case "SEO Avançado": return <SEOGraphic />;
-    case "Design Criativo": return <DesignGraphic />;
+    case "Design": return <DesignGraphic />;
     case "Automação": return <AutomationGraphic />;
     case "Audiovisual": return <AudioVisualGraphic />;
     default: return <DefaultGraphic />;

@@ -14,28 +14,16 @@ const services = [
     description: "Posicionamento estratégico e criação de conteúdo que gera desejo.",
   },
   {
-    title: "Branding",
-    description: "Construção de marcas magnéticas, premium e inesquecíveis.",
-  },
-  {
-    title: "Desenvolvimento Web",
-    description: "Sites e sistemas web com performance extrema e design autoral.",
-  },
-  {
-    title: "SEO Avançado",
-    description: "Domine as primeiras posições do Google de forma orgânica e duradoura.",
-  },
-  {
-    title: "Design Criativo",
+    title: "Design",
     description: "Visuais de alto impacto que comunicam valor instantaneamente.",
-  },
-  {
-    title: "Automação",
-    description: "Processos automatizados para que sua equipe foque apenas no estratégico.",
   },
   {
     title: "Audiovisual",
     description: "Vídeos institucionais e comerciais com qualidade de cinema.",
+  },
+  {
+    title: "Branding",
+    description: "Construção de marcas magnéticas, premium e inesquecíveis.",
   },
 ];
 
@@ -83,7 +71,7 @@ export function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto"
         >
           {services.map((service) => (
             <motion.div
@@ -91,7 +79,8 @@ export function Services() {
               variants={cardVariants}
               className={cn(
                 "group relative p-6 md:p-8 rounded-md glass border border-white/5 transition-all duration-500 flex flex-col",
-                "hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_10px_40px_-10px_rgba(0,240,255,0.15)]"
+                "hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_10px_40px_-10px_rgba(0,240,255,0.15)]",
+                "w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md"
               )}
             >
               {/* Internal Hologram Glow */}

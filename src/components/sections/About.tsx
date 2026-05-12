@@ -32,20 +32,17 @@ export function About() {
               className="space-y-6 text-gray-400 text-lg leading-relaxed"
             >
               <p>
-                A MP Creative nasceu para quebrar o padrão superficial do marketing tradicional e construir estratégias que realmente geram crescimento, autoridade e escala.
+                Quebramos o padrão superficial do mercado unindo design de alto impacto, inteligência e performance para posicionar sua empresa acima da concorrência.
               </p>
               <p>
-                Unimos design de alto impacto, inteligência de mercado, performance e engenharia de crescimento para criar experiências digitais que posicionam empresas acima da concorrência.
+                Nosso foco é único: transformar atenção em autoridade, e autoridade em resultado escalável.
               </p>
               <p>
-                Cada campanha, cada identidade e cada projeto são desenvolvidos com um único objetivo: transformar atenção em posicionamento e posicionamento em resultado.
-              </p>
-              <p>
-                Hoje, a MP Creative expande sua visão além das fronteiras, atuando em 3 países diferentes e conectando marcas a estratégias globais de alta performance.
+                Com atuação em 3 países, conectamos marcas a estratégias globais de crescimento.
               </p>
               <p className="text-white font-medium text-xl mt-8">
                 Não criamos apenas presença digital.<br />
-                Construímos marcas preparadas para crescer em qualquer mercado.
+                Construímos marcas feitas para liderar mercados.
               </p>
             </motion.div>
           </div>
