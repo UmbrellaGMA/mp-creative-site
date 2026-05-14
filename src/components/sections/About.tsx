@@ -1,64 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WorldMap } from "@/components/ui/WorldMap";
+import { Target, TrendingUp, Users } from "lucide-react";
+import Image from "next/image";
+
+const stats = [
+  { id: 1, value: "10M+", label: "Faturamento Gerado", icon: TrendingUp },
+  { id: 2, value: "50+", label: "Marcas Atendidas", icon: Users },
+  { id: 3, value: "98%", label: "Taxa de Retenção", icon: Target },
+];
 
 export function About() {
   return (
-    <section id="sobre" className="relative py-32 bg-[#02050A] border-y border-white/5 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+    <section id="sobre" className="py-32 bg-brand-dark relative overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left: Asymmetric Typography */}
-          <div className="w-full lg:w-1/2 relative">
-            <div className="absolute -top-20 -left-20 w-64 h-64 bg-cyan-500/10 blur-[100px] rounded-full" />
-            
-            <motion.h2 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-8"
-            >
-              Não somos uma agência comum.<br />
-              Somos parceiros estratégicos de marcas que querem <span className="text-cyan-400 italic">dominar o digital</span>.
-            </motion.h2>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="space-y-6 text-gray-400 text-lg leading-relaxed"
-            >
-              <p>
-                Quebramos o padrão superficial do mercado unindo design de alto impacto, inteligência e performance para posicionar sua empresa acima da concorrência.
-              </p>
-              <p>
-                Nosso foco é único: transformar atenção em autoridade, e autoridade em resultado escalável.
-              </p>
-              <p>
-                Com atuação em 3 países, conectamos marcas a estratégias globais de crescimento.
-              </p>
-              <p className="text-white font-medium text-xl mt-8">
-                Não criamos apenas presença digital.<br />
-                Construímos marcas feitas para liderar mercados.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Right: World Map connecting locations */}
-          <div className="w-full lg:w-1/2 relative min-h-[400px] flex items-center justify-center">
+          {/* Left: Content */}
+          <div className="flex flex-col justify-center order-2 lg:order-1">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="w-full"
+              transition={{ duration: 0.8 }}
             >
-              <WorldMap />
+              <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6 leading-tight">
+                Não fazemos apenas marketing. <br/> <span className="font-bold text-white">Construímos ecossistemas de vendas.</span>
+              </h2>
+              <div className="w-12 h-1 bg-brand-cyan mb-8" />
+              <p className="text-gray-400 text-lg mb-12 font-light leading-relaxed">
+                A MP Creative nasceu da necessidade de entregar resultados reais. Enquanto a maioria das agências foca em métricas de vaidade, nosso compromisso é com o ROI da sua empresa. Unimos criatividade, dados e tecnologia para escalar negócios.
+              </p>
             </motion.div>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-md bg-brand-gray/30 border border-white/5 flex flex-col items-center text-center"
+                >
+                  <stat.icon className="w-6 h-6 text-brand-cyan mb-4" />
+                  <div className="text-3xl font-heading font-bold text-white mb-2">{stat.value}</div>
+                  <div className="text-xs tracking-wider uppercase text-gray-500">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
+
+          {/* Right: Graphic */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+          >
+            <div className="relative aspect-square w-full max-w-md bg-brand-gray/20 rounded-full border border-white/5 flex items-center justify-center p-12">
+               <div className="absolute inset-0 border border-white/5 rounded-full scale-110" />
+               <div className="absolute inset-0 border border-white/5 rounded-full scale-125 opacity-50" />
+               <Image
+                 src="/logo-mp-creative-vertical.svg"
+                 alt="MP Creative Ecosystem"
+                 width={300}
+                 height={300}
+                 className="w-full h-full object-contain relative z-10 opacity-80"
+               />
+            </div>
+          </motion.div>
 
         </div>
       </div>

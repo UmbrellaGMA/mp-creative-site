@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${outfit.variable} ${spaceGrotesk.variable} antialiased`}>
-      <body className="font-sans bg-navy-900 text-white min-h-screen" suppressHydrationWarning>
+      <body className="font-sans bg-brand-dark text-white min-h-screen" suppressHydrationWarning>
         {children}
       </body>
     </html>

@@ -46,22 +46,19 @@ const cardVariants: Variants = {
 
 export function Services() {
   return (
-    <section id="servicos" className="relative py-32 bg-[#040B16] overflow-hidden">
-      {/* Background glow elements */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-cyan-600/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
-
+    <section id="servicos" className="py-32 bg-brand-dark border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-              Nosso arsenal de <span className="text-gradient">crescimento</span>
+            <p className="text-sm tracking-widest uppercase text-gray-400 mb-4">ESPECIALIDADES</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6">
+              Nosso arsenal de <span className="font-bold text-white">crescimento</span>
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-lg font-light leading-relaxed">
               Soluções integradas desenhadas meticulosamente para dominar o mercado, não apenas para competir nele.
             </p>
           </div>
-          <button className="px-6 py-3 rounded-full text-white font-medium border border-cyan-400/30 hover:border-cyan-400/80 transition-colors whitespace-nowrap">
+          <button className="px-8 py-3 rounded-md text-brand-dark bg-brand-cyan font-medium hover:bg-cyan-400 transition-colors whitespace-nowrap">
             Ver todas as soluções
           </button>
         </div>
@@ -78,23 +75,20 @@ export function Services() {
               key={service.title}
               variants={cardVariants}
               className={cn(
-                "group relative p-6 md:p-8 rounded-md glass border border-white/5 transition-all duration-500 flex flex-col",
-                "hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_10px_40px_-10px_rgba(0,240,255,0.15)]",
+                "group relative p-6 md:p-8 rounded-md bg-brand-gray/30 border border-white/5 transition-all duration-300 flex flex-col",
+                "hover:-translate-y-2 hover:border-brand-cyan/30",
                 "w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md"
               )}
             >
-              {/* Internal Hologram Glow */}
-              <div className="absolute inset-0 rounded-md bg-gradient-to-b from-cyan-400/0 to-cyan-400/0 group-hover:from-cyan-400/5 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
-              
               <div className="relative z-10 flex-1 flex flex-col">
                 {/* Animated Graphic Block */}
-                <div className="w-full h-32 md:h-40 rounded-md bg-[#02050A]/50 border border-white/5 mb-6 overflow-hidden relative group-hover:border-cyan-400/30 transition-all duration-500">
+                <div className="w-full h-32 md:h-40 rounded-md bg-brand-dark border border-white/5 mb-6 overflow-hidden relative group-hover:border-brand-cyan/30 transition-all duration-300">
                   <ServiceGraphic type={service.title} />
                 </div>
                 
                 {/* Text Content */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{service.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed flex-1">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">{service.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed flex-1 font-light">
                   {service.description}
                 </p>
               </div>

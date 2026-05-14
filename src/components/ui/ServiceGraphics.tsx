@@ -95,7 +95,7 @@ function BrandingGraphic() {
 function WebDevGraphic() {
   return (
     <div className="relative w-full h-full flex items-center justify-center p-6">
-      <div className="w-full h-full border border-cyan-400/30 rounded-lg bg-[#02050A] flex flex-col overflow-hidden">
+      <div className="w-full h-full border border-cyan-400/30 rounded-md bg-[#02050A] flex flex-col overflow-hidden">
         <div className="h-4 border-b border-cyan-400/30 bg-white/5 flex items-center px-2 gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-red-500/50" />
           <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/50" />
@@ -199,7 +199,7 @@ function AutomationGraphic() {
 function AudioVisualGraphic() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="w-20 h-14 border-2 border-cyan-400/30 rounded-lg flex items-center justify-center relative overflow-hidden bg-[#02050A]">
+      <div className="w-20 h-14 border-2 border-cyan-400/30 rounded-md flex items-center justify-center relative overflow-hidden bg-[#02050A]">
         {/* Film Strip Holes */}
         <div className="absolute top-1 left-0 right-0 flex justify-between px-1">
           {[1,2,3,4].map(i => <div key={i} className="w-1.5 h-1.5 bg-white/20 rounded-sm" />)}

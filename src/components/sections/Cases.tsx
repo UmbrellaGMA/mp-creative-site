@@ -27,18 +27,20 @@ const videos = [
 
 export function Cases() {
   return (
-    <section id="cases" className="relative py-32 bg-[#02050A] overflow-hidden border-t border-white/5">
-      <div className="container mx-auto px-6 md:px-12 mb-16 flex flex-col items-center text-center">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
-          Nossos <span className="text-cyan-400">Resultados</span> em Vídeo
-        </h2>
-        <p className="text-gray-400 max-w-2xl text-lg">
-          Não colecionamos clientes, colecionamos cases de sucesso absolutos. Assista como transformamos marcas comuns em líderes de mercado.
-        </p>
-      </div>
+    <section id="cases" className="py-32 bg-brand-dark border-t border-white/5">
+      <div className="container mx-auto px-6 md:px-12 flex flex-col items-center">
+        
+        <div className="text-center mb-16">
+          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">RESULTADOS</p>
+          <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6">
+            Nossos <span className="font-bold text-white">cases de sucesso</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl text-lg font-light">
+            Não colecionamos clientes, colecionamos cases de sucesso absolutos. Assista como transformamos marcas comuns em líderes de mercado.
+          </p>
+        </div>
 
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full max-w-5xl mx-auto">
           {videos.map((video, idx) => (
             <motion.div
               key={video.id}
@@ -46,16 +48,15 @@ export function Cases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-6"
             >
               {/* Contêiner do vídeo vertical (9:16 aspect ratio) */}
-              <div className="relative w-full aspect-[9/16] rounded-md overflow-hidden glass border border-white/10 shadow-[0_0_30px_rgba(0,240,255,0.05)] group">
-                <div className="absolute inset-0 bg-cyan-500/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+              <div className="relative w-full aspect-[9/16] rounded-md overflow-hidden bg-brand-gray/30 border border-white/5 group">
                 
                 {video.videoId.startsWith("VIDEO_ID") ? (
                   // Placeholder para quando o ID do vídeo ainda não foi colocado
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-[#040B16]">
-                    <span className="text-cyan-400 text-sm font-medium mb-2 uppercase tracking-widest">{video.category}</span>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-brand-dark">
+                    <span className="text-brand-cyan text-sm font-medium mb-2 uppercase tracking-widest">{video.category}</span>
                     <p className="text-gray-500 text-sm">Insira o ID do YouTube no código para visualizar</p>
                   </div>
                 ) : (
@@ -72,8 +73,8 @@ export function Cases() {
 
               {/* Informações abaixo do vídeo */}
               <div className="text-center px-2">
-                <p className="text-cyan-400 text-xs font-medium mb-1 tracking-wider uppercase">{video.category}</p>
-                <h3 className="text-xl font-bold text-white">{video.title}</h3>
+                <p className="text-brand-cyan text-xs font-bold mb-2 tracking-widest uppercase">{video.category}</p>
+                <h3 className="text-xl font-heading text-white">{video.title}</h3>
               </div>
             </motion.div>
           ))}
