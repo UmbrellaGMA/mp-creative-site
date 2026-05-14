@@ -8,7 +8,7 @@ export function Instagram() {
       <div className="container mx-auto px-6 md:px-12 flex flex-col items-center">
         
         <div className="text-center mb-12">
-          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">mpcreative.internacional</p>
+          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">@mpcreativeoficial</p>
           <h2 className="text-2xl md:text-3xl font-heading text-white">Siga nosso dia a dia no Instagram</h2>
         </div>
 
@@ -34,7 +34,7 @@ export function Instagram() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-12 px-8 py-3 rounded-md font-medium text-sm text-brand-dark bg-brand-cyan hover:bg-cyan-400 transition-colors"
         >
-          @mpcreative.internacional
+          @mpcreativeoficial
         </motion.button>
 
       </div>
