@@ -8,11 +8,11 @@ export function CTA() {
     <section className="py-32 bg-brand-dark border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto bg-brand-cyan/10 p-12 md:p-20 rounded-md border border-brand-cyan/20"
+          className="max-w-4xl mx-auto flex flex-col items-center"
         >
           <h2 className="text-4xl md:text-6xl font-heading font-light text-white mb-6 tracking-tight leading-tight">
             Pronto para elevar sua <span className="font-bold">marca</span>?

@@ -20,14 +20,14 @@ export function Team() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-brand-gray/40 rounded-md p-8 border border-white/5 flex flex-col md:flex-row gap-8 items-center md:items-start"
+            className="bg-brand-gray/40 rounded-md p-8 border border-white/5 flex flex-col md:flex-row gap-8 items-center"
           >
             <div className="w-48 h-48 bg-brand-dark rounded-md overflow-hidden flex-shrink-0 flex items-center justify-center border border-white/10 relative">
                {/* Coloque a foto dele na pasta public com o nome kleber.jpg */}
-               <img src="/kleber.jpeg" alt="Kleber Prado Rocha" className="absolute inset-0 w-full h-full object-cover" />
+               <img src="/kleber.jpeg" alt="Kleber" className="absolute inset-0 w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col text-center md:text-left pt-2">
-              <h3 className="text-2xl font-bold text-white mb-1">Kleber Prado Rocha</h3>
+            <div className="flex flex-col text-center md:text-left">
+              <h3 className="text-2xl font-bold text-white mb-1">Kleber</h3>
               <p className="text-brand-cyan text-sm font-medium mb-6 uppercase tracking-wider">CEO</p>
               <p className="text-gray-300 leading-relaxed">
                 Especialista em branding estratégico e performance de alta conversão. À frente da MP Creative, foca em construir e escalar negócios no ecossistema digital com foco absoluto em resultados e posicionamento premium.

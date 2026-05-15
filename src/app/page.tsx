@@ -6,7 +6,6 @@ import { Methodology } from "@/components/sections/Methodology";
 import { Cases } from "@/components/sections/Cases";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Team } from "@/components/sections/Team";
-import { Instagram } from "@/components/sections/Instagram";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/layout/Footer";
 
@@ -21,7 +20,6 @@ export default function Home() {
       <Methodology />
       <Testimonials />
       <Team />
-      <Instagram />
       <CTA />
       <Footer />
     </main>
