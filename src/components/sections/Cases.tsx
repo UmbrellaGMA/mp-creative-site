@@ -5,23 +5,21 @@ import { motion } from "framer-motion";
 const videos = [
   {
     id: 1,
-    title: "Caso de Sucesso: TechNova",
+    title: "Case: Evento Esportivo",
     category: "Performance",
-    // Para colocar o seu vídeo, troque "VIDEO_ID_1" pelo ID real do YouTube
-    // Exemplo: se o link for youtube.com/shorts/abc123xyz, o ID é "abc123xyz"
-    videoId: "VIDEO_ID_1", 
+    videoSrc: "/Hyrox lisboa.MOV", 
   },
   {
     id: 2,
-    title: "Bastidores: Lumina",
+    title: "Produção: Gastronomia",
     category: "Rebranding",
-    videoId: "VIDEO_ID_2",
+    videoSrc: "/Pizza.MOV",
   },
   {
     id: 3,
-    title: "Estratégia de Escala: Vektor",
+    title: "Projeto: Construção Civil",
     category: "Growth",
-    videoId: "VIDEO_ID_3",
+    videoSrc: "/obra.MOV",
   },
 ];
 
@@ -52,23 +50,15 @@ export function Cases() {
             >
               {/* Contêiner do vídeo vertical (9:16 aspect ratio) */}
               <div className="relative w-full aspect-[9/16] rounded-md overflow-hidden bg-brand-gray/30 border border-white/5 group">
-                
-                {video.videoId.startsWith("VIDEO_ID") ? (
-                  // Placeholder para quando o ID do vídeo ainda não foi colocado
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-brand-dark">
-                    <span className="text-brand-cyan text-sm font-medium mb-2 uppercase tracking-widest">{video.category}</span>
-                    <p className="text-gray-500 text-sm">Insira o ID do YouTube no código para visualizar</p>
-                  </div>
-                ) : (
-                  // Iframe real do YouTube Shorts
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.videoId}?rel=0&modestbranding=1&controls=1`}
-                    title={video.title}
-                    className="absolute inset-0 w-full h-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                )}
+                <video
+                  src={video.videoSrc}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
               </div>
 
               {/* Informações abaixo do vídeo */}
