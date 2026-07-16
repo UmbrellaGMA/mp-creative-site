@@ -1,40 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    num: "01",
-    title: "Planejar",
-    desc: "Análise profunda de dados, concorrentes e oportunidades ocultas no seu mercado.",
-  },
-  {
-    num: "02",
-    title: "Criar",
-    desc: "Desenvolvimento de branding magnético, copy persuasiva e design de alta conversão.",
-  },
-  {
-    num: "03",
-    title: "Escalar",
-    desc: "Injeção de tráfego ultra-segmentado e automação de vendas em escala.",
-  },
-  {
-    num: "04",
-    title: "Otimizar",
-    desc: "Ajuste fino contínuo baseado em dados reais (Growth Hacking) para maximizar o ROI.",
-  },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export function Methodology() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      num: "01",
+      title: t.methodology.step1_title,
+      desc: t.methodology.step1_desc,
+    },
+    {
+      num: "02",
+      title: t.methodology.step2_title,
+      desc: t.methodology.step2_desc,
+    },
+    {
+      num: "03",
+      title: t.methodology.step3_title,
+      desc: t.methodology.step3_desc,
+    },
+    {
+      num: "04",
+      title: t.methodology.step4_title,
+      desc: t.methodology.step4_desc,
+    },
+  ];
+
   return (
     <section id="metodologia" className="relative py-32 bg-brand-dark overflow-hidden border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6">
-            O Sistema <span className="font-bold text-white">MP Creative</span>
+            {t.methodology.title_start}<span className="font-bold text-white">{t.methodology.title_bold}</span>
           </h2>
           <p className="text-gray-400 text-lg font-light leading-relaxed">
-            Nossa metodologia proprietária que transforma investimentos em faturamento previsível através de 4 estágios cirúrgicos.
+            {t.methodology.subtitle}
           </p>
         </div>
 

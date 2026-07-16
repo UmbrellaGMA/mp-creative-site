@@ -4,15 +4,26 @@ import { motion } from "framer-motion";
 
 export function ServiceGraphic({ type }: { type: string }) {
   switch (type) {
-    case "Tráfego Pago": return <PaidTrafficGraphic />;
-    case "Social Media": return <SocialMediaGraphic />;
-    case "Branding": return <BrandingGraphic />;
-    case "Desenvolvimento Web": return <WebDevGraphic />;
-    case "SEO Avançado": return <SEOGraphic />;
-    case "Design": return <DesignGraphic />;
-    case "Automação": return <AutomationGraphic />;
-    case "Audiovisual": return <AudioVisualGraphic />;
-    default: return <DefaultGraphic />;
+    case "Tráfego Pago":
+    case "Tráfico Pago":
+      return <PaidTrafficGraphic />;
+    case "Social Media":
+      return <SocialMediaGraphic />;
+    case "Branding":
+      return <BrandingGraphic />;
+    case "Desenvolvimento Web":
+      return <WebDevGraphic />;
+    case "SEO Avançado":
+      return <SEOGraphic />;
+    case "Design":
+    case "Diseño":
+      return <DesignGraphic />;
+    case "Automação":
+      return <AutomationGraphic />;
+    case "Audiovisual":
+      return <AudioVisualGraphic />;
+    default:
+      return <DefaultGraphic />;
   }
 }
 

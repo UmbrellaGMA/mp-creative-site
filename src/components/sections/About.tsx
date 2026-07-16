@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 import { Target, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
-
-const stats = [
-  { id: 1, value: "10M+", label: "Faturamento Gerado", icon: TrendingUp },
-  { id: 2, value: "50+", label: "Marcas Atendidas", icon: Users },
-  { id: 3, value: "98%", label: "Taxa de Retenção", icon: Target },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export function About() {
+  const { t } = useLanguage();
+
+  const stats = [
+    { id: 1, value: t.about.stat1_value, label: t.about.stat1_label, icon: TrendingUp },
+    { id: 2, value: t.about.stat2_value, label: t.about.stat2_label, icon: Users },
+    { id: 3, value: t.about.stat3_value, label: t.about.stat3_label, icon: Target },
+  ];
+
   return (
     <section id="sobre" className="py-32 bg-brand-dark relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -25,11 +28,11 @@ export function About() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6 leading-tight">
-                Não fazemos apenas marketing. <br/> <span className="font-bold text-white">Construímos ecossistemas de vendas.</span>
+                {t.about.title_start}<br/> <span className="font-bold text-white">{t.about.title_bold}</span>
               </h2>
               <div className="w-12 h-1 bg-brand-cyan mb-8" />
               <p className="text-gray-400 text-lg mb-12 font-light leading-relaxed">
-                A MP Creative nasceu da necessidade de entregar resultados reais. Enquanto a maioria das agências foca em métricas de vaidade, nosso compromisso é com o ROI da sua empresa. Unimos criatividade, dados e tecnologia para escalar negócios.
+                {t.about.description}
               </p>
             </motion.div>
 

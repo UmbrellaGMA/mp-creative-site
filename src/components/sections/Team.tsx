@@ -1,15 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/language-context";
 
 export function Team() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-brand-dark">
       <div className="container mx-auto px-6 md:px-12 flex flex-col items-center">
         
         <div className="text-center mb-16">
-          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">A MENTE POR TRÁS</p>
-          <h2 className="text-3xl md:text-5xl font-heading font-light text-white">Liderança <span className="font-bold">Estratégica</span></h2>
+          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">{t.team.label}</p>
+          <h2 className="text-3xl md:text-5xl font-heading font-light text-white">{t.team.title_start}<span className="font-bold">{t.team.title_bold}</span></h2>
         </div>
 
         <div className="w-full max-w-2xl mx-auto">
@@ -27,10 +30,10 @@ export function Team() {
                <img src="/kleber.jpeg" alt="Kleber" className="absolute inset-0 w-full h-full object-cover" />
             </div>
             <div className="flex flex-col text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-1">Kleber</h3>
-              <p className="text-brand-cyan text-sm font-medium mb-6 uppercase tracking-wider">CEO</p>
+              <h3 className="text-2xl font-bold text-white mb-1">{t.team.ceo_name}</h3>
+              <p className="text-brand-cyan text-sm font-medium mb-6 uppercase tracking-wider">{t.team.ceo_role}</p>
               <p className="text-gray-300 leading-relaxed">
-                Especialista em branding estratégico e performance de alta conversão. À frente da MP Creative, foca em construir e escalar negócios no ecossistema digital com foco absoluto em resultados e posicionamento premium.
+                {t.team.ceo_desc}
               </p>
             </div>
           </motion.div>

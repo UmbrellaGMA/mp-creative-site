@@ -1,40 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const videos = [
-  {
-    id: 1,
-    title: "Case: Evento Esportivo",
-    category: "Performance",
-    videoSrc: "/Hyrox lisboa.MOV", 
-  },
-  {
-    id: 2,
-    title: "Produção: Gastronomia",
-    category: "Rebranding",
-    videoSrc: "/Pizza.MOV",
-  },
-  {
-    id: 3,
-    title: "Projeto: Construção Civil",
-    category: "Growth",
-    videoSrc: "/obra.MOV",
-  },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export function Cases() {
+  const { t } = useLanguage();
+
+  const videos = [
+    {
+      id: 1,
+      title: t.cases.video1_title,
+      category: t.cases.video1_category,
+      videoSrc: "/Hyrox lisboa.MOV", 
+    },
+    {
+      id: 2,
+      title: t.cases.video2_title,
+      category: t.cases.video2_category,
+      videoSrc: "/Pizza.MOV",
+    },
+    {
+      id: 3,
+      title: t.cases.video3_title,
+      category: t.cases.video3_category,
+      videoSrc: "/obra.MOV",
+    },
+  ];
+
   return (
     <section id="cases" className="py-32 bg-brand-dark border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12 flex flex-col items-center">
         
         <div className="text-center mb-16">
-          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">RESULTADOS</p>
+          <p className="text-sm tracking-widest uppercase text-gray-400 mb-2">{t.cases.label}</p>
           <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6">
-            Nossos <span className="font-bold text-white">cases de sucesso</span>
+            {t.cases.title_start}<span className="font-bold text-white">{t.cases.title_bold}</span>
           </h2>
           <p className="text-gray-400 max-w-2xl text-lg font-light">
-            Não colecionamos clientes, colecionamos cases de sucesso absolutos. Assista como transformamos marcas comuns em líderes de mercado.
+            {t.cases.subtitle}
           </p>
         </div>
 

@@ -3,29 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ServiceGraphic } from "@/components/ui/ServiceGraphics";
-
-const services = [
-  {
-    title: "Tráfego Pago",
-    description: "Gestão avançada de anúncios para escalar suas vendas com ROI previsível.",
-  },
-  {
-    title: "Social Media",
-    description: "Posicionamento estratégico e criação de conteúdo que gera desejo.",
-  },
-  {
-    title: "Design",
-    description: "Visuais de alto impacto que comunicam valor instantaneamente.",
-  },
-  {
-    title: "Audiovisual",
-    description: "Vídeos institucionais e comerciais com qualidade de cinema.",
-  },
-  {
-    title: "Branding",
-    description: "Construção de marcas magnéticas, premium e inesquecíveis.",
-  },
-];
+import { useLanguage } from "@/lib/language-context";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -45,22 +23,47 @@ const cardVariants: Variants = {
 };
 
 export function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      title: t.services.service1_title,
+      description: t.services.service1_desc,
+    },
+    {
+      title: t.services.service2_title,
+      description: t.services.service2_desc,
+    },
+    {
+      title: t.services.service3_title,
+      description: t.services.service3_desc,
+    },
+    {
+      title: t.services.service4_title,
+      description: t.services.service4_desc,
+    },
+    {
+      title: t.services.service5_title,
+      description: t.services.service5_desc,
+    },
+  ];
+
   return (
     <section id="servicos" className="py-32 bg-brand-dark border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
-            <p className="text-sm tracking-widest uppercase text-gray-400 mb-4">ESPECIALIDADES</p>
+            <p className="text-sm tracking-widest uppercase text-gray-400 mb-4">{t.services.label}</p>
             <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6">
-              Nosso arsenal de <span className="font-bold text-white">crescimento</span>
+              {t.services.title_start}<span className="font-bold text-white">{t.services.title_bold}</span>
             </h2>
             <p className="text-gray-400 text-lg font-light leading-relaxed">
-              Soluções integradas desenhadas meticulosamente para dominar o mercado, não apenas para competir nele.
+              {t.services.subtitle}
             </p>
           </div>
-          <button className="px-8 py-3 rounded-md text-brand-dark bg-brand-cyan font-medium hover:bg-cyan-400 transition-colors whitespace-nowrap">
-            Ver todas as soluções
-          </button>
+          <a href="https://wa.me/5513996584687" target="_blank" rel="noopener noreferrer" className="px-8 py-3 rounded-md text-brand-dark bg-brand-cyan font-medium hover:bg-cyan-400 transition-colors whitespace-nowrap">
+            {t.services.cta}
+          </a>
         </div>
 
         <motion.div

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/lib/language-context";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -15,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "MP Creative | Agência de Marketing Digital",
-  description: "Estratégias de marketing, branding e performance para empresas que querem crescer de verdade.",
+  title: "MP Creative | Agencia de Marketing Digital",
+  description: "Estrategias de marketing, branding y performance para empresas que quieren crecer de verdad.",
 };
 
 export default function RootLayout({
@@ -25,9 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} ${spaceGrotesk.variable} antialiased`}>
+    <html lang="es" className={`${outfit.variable} ${spaceGrotesk.variable} antialiased`}>
       <body className="font-sans bg-brand-dark text-white min-h-screen" suppressHydrationWarning>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

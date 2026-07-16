@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export function CTA() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-32 bg-brand-dark border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
@@ -15,18 +18,18 @@ export function CTA() {
           className="max-w-4xl mx-auto flex flex-col items-center"
         >
           <h2 className="text-4xl md:text-6xl font-heading font-light text-white mb-6 tracking-tight leading-tight">
-            Pronto para elevar sua <span className="font-bold">marca</span>?
+            {t.cta.title_start}<span className="font-bold">{t.cta.title_bold}</span>{t.cta.title_end}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Deixe as agências tradicionais no passado. Pare de queimar dinheiro com estratégias que não convertem e junte-se ao futuro do marketing digital.
+            {t.cta.subtitle}
           </p>
           
-          <button className="group px-10 py-5 bg-brand-cyan text-brand-dark font-medium rounded-md hover:bg-cyan-400 transition-colors">
+          <a href="https://wa.me/5513996584687" target="_blank" rel="noopener noreferrer" className="group px-10 py-5 bg-brand-cyan text-brand-dark font-medium rounded-md hover:bg-cyan-400 transition-colors">
             <span className="flex items-center justify-center gap-3">
-              Falar com especialistas
+              {t.cta.button}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </span>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

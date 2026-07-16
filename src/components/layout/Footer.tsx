@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/lib/language-context";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-brand-dark pt-32 pb-12">
       <div className="container mx-auto px-6 md:px-12 flex flex-col">
@@ -11,22 +14,17 @@ export function Footer() {
         {/* Top Info */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
           <div className="flex gap-8 text-sm tracking-widest uppercase text-gray-400">
-             <Link href="#" className="hover:text-brand-cyan transition-colors">Instagram</Link>
-             <Link href="#" className="hover:text-brand-cyan transition-colors">Behance</Link>
-             <Link href="#" className="hover:text-brand-cyan transition-colors">LinkedIn</Link>
-          </div>
-          <div className="text-sm tracking-widest uppercase text-gray-400">
-             São Paulo — SP
+             <Link href="https://www.instagram.com/mpcreativeoficial/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors">Instagram</Link>
           </div>
         </div>
 
         {/* Large Typography */}
         <div className="mb-24 flex flex-col">
           <h2 className="text-[12vw] leading-[0.8] font-heading font-bold text-white uppercase tracking-tighter">
-            OBRIGADO!
+            {t.footer.thanks_primary}
           </h2>
           <h2 className="text-[8vw] leading-[0.8] font-heading font-light text-gray-400 uppercase tracking-tighter ml-1 md:ml-4">
-            THANKS!
+            {t.footer.thanks_secondary}
           </h2>
         </div>
 
@@ -42,7 +40,7 @@ export function Footer() {
             />
           </Link>
           <div className="text-xs text-gray-500 tracking-wider uppercase">
-            © {new Date().getFullYear()} MP Creative. Todos os direitos reservados.
+            © {new Date().getFullYear()} MP Creative. {t.footer.copyright}
           </div>
         </div>
 

@@ -2,39 +2,42 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Ricardo Silva",
-    role: "CEO, TechNova",
-    content: "O nível de profissionalismo e visão estratégica da MP Creative é absurdo. Eles não apenas refizeram nosso branding, mas reestruturaram nosso funil de vendas, gerando um aumento de 240% em 3 meses.",
-  },
-  {
-    id: 2,
-    name: "Amanda Costa",
-    role: "Diretora de Marketing, Lumina",
-    content: "Já passamos por várias agências que prometiam muito e entregavam o básico. A MP tem uma engenharia de tráfego que finalmente nos trouxe previsibilidade de receita.",
-  },
-  {
-    id: 3,
-    name: "Carlos Mendes",
-    role: "Founder, Vektor",
-    content: "Design brutalmente elegante aliado a uma performance impecável. Eles entenderam a alma do nosso negócio e traduziram isso em uma plataforma que converte clientes todos os dias.",
-  },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export function Testimonials() {
+  const { t } = useLanguage();
+
+  const testimonials = [
+    {
+      id: 1,
+      name: t.testimonials.t1_name,
+      role: t.testimonials.t1_role,
+      content: t.testimonials.t1_content,
+    },
+    {
+      id: 2,
+      name: t.testimonials.t2_name,
+      role: t.testimonials.t2_role,
+      content: t.testimonials.t2_content,
+    },
+    {
+      id: 3,
+      name: t.testimonials.t3_name,
+      role: t.testimonials.t3_role,
+      content: t.testimonials.t3_content,
+    },
+  ];
+
   return (
     <section className="py-32 bg-brand-dark border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-20">
-          <p className="text-sm tracking-widest uppercase text-gray-400 mb-4">DEPOIMENTOS</p>
+          <p className="text-sm tracking-widest uppercase text-gray-400 mb-4">{t.testimonials.label}</p>
           <h2 className="text-4xl md:text-5xl font-heading font-light text-white mb-6">
-            Validação <span className="font-bold text-white">Absoluta</span>
+            {t.testimonials.title_start}<span className="font-bold text-white">{t.testimonials.title_bold}</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-            O que dizem os líderes que confiaram a expansão de suas marcas ao nosso ecossistema.
+            {t.testimonials.subtitle}
           </p>
         </div>
 

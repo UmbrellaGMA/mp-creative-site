@@ -6,16 +6,18 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { name: "Início", href: "#" },
-  { name: "Sobre", href: "#sobre" },
-  { name: "Cases", href: "#cases" },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { locale, setLocale, t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav.inicio, href: "#" },
+    { name: t.nav.sobre, href: "#sobre" },
+    { name: t.nav.cases, href: "#cases" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,11 +61,35 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Actions */}
-        <div className="hidden md:flex items-center gap-6">
-          <button className="px-6 py-2.5 rounded-md font-medium text-sm text-brand-dark bg-brand-cyan hover:bg-cyan-400 transition-colors duration-300">
-            Falar conosco
-          </button>
+        {/* Actions + Language Switcher */}
+        <div className="hidden md:flex items-center gap-4">
+          {/* Language Flags */}
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setLocale("es")}
+              className={cn(
+                "w-8 h-8 rounded-full overflow-hidden border-2 transition-all duration-300 flex items-center justify-center text-lg",
+                locale === "es" ? "border-brand-cyan scale-110 shadow-[0_0_12px_rgba(0,255,255,0.3)]" : "border-white/10 opacity-50 hover:opacity-80 hover:border-white/30"
+              )}
+              title="Español"
+            >
+              🇪🇸
+            </button>
+            <button
+              onClick={() => setLocale("pt")}
+              className={cn(
+                "w-8 h-8 rounded-full overflow-hidden border-2 transition-all duration-300 flex items-center justify-center text-lg",
+                locale === "pt" ? "border-brand-cyan scale-110 shadow-[0_0_12px_rgba(0,255,255,0.3)]" : "border-white/10 opacity-50 hover:opacity-80 hover:border-white/30"
+              )}
+              title="Português"
+            >
+              🇧🇷
+            </button>
+          </div>
+
+          <a href="https://wa.me/5513996584687" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 rounded-md font-medium text-sm text-brand-dark bg-brand-cyan hover:bg-cyan-400 transition-colors duration-300">
+            {t.nav.contacto}
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -96,11 +122,34 @@ export function Header() {
                 </Link>
               ))}
             </nav>
+
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setLocale("es")}
+                className={cn(
+                  "w-10 h-10 rounded-full overflow-hidden border-2 transition-all duration-300 flex items-center justify-center text-xl",
+                  locale === "es" ? "border-brand-cyan shadow-[0_0_12px_rgba(0,255,255,0.3)]" : "border-white/10 opacity-50"
+                )}
+              >
+                🇪🇸
+              </button>
+              <button
+                onClick={() => setLocale("pt")}
+                className={cn(
+                  "w-10 h-10 rounded-full overflow-hidden border-2 transition-all duration-300 flex items-center justify-center text-xl",
+                  locale === "pt" ? "border-brand-cyan shadow-[0_0_12px_rgba(0,255,255,0.3)]" : "border-white/10 opacity-50"
+                )}
+              >
+                🇧🇷
+              </button>
+            </div>
+
             <div className="h-px w-full bg-white/10" />
             <div className="flex flex-col gap-4">
-              <button className="w-full text-center px-6 py-3 rounded-md font-medium text-brand-dark bg-brand-cyan">
-                Falar conosco
-              </button>
+              <a href="https://wa.me/5513996584687" target="_blank" rel="noopener noreferrer" className="w-full text-center px-6 py-3 rounded-md font-medium text-brand-dark bg-brand-cyan">
+                {t.nav.contacto}
+              </a>
             </div>
           </motion.div>
         )}
